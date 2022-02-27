@@ -1,0 +1,14 @@
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\BusinessLayer\bin\Debug\DataAccessLayer.dll
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\BusinessLayer\bin\Debug\EPPlus.dll
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\BusinessLayer\bin\Debug\EntityFramework.dll
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\BusinessLayer\bin\Debug\DataAccessLayer.pdb
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\BusinessLayer\bin\Debug\DataAccessLayer.dll.config
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\BusinessLayer\bin\Debug\EPPlus.xml
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\BusinessLayer\bin\Debug\EntityFramework.xml
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\BusinessLayer\obj\Debug\BusinessLayer.csprojAssemblyReference.cache
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\BusinessLayer\obj\Debug\BusinessLayer.pdb

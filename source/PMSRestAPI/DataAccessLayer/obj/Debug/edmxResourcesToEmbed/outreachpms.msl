@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="outreachpmsModelStoreContainer" CdmEntityContainer="outreachpmsEntities">
+    <FunctionImportMapping FunctionImportName="GetDataForExcelUpload" FunctionName="outreachpmsModel.Store.GetDataForExcelUpload">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="outreachpmsModel.GetDataForExcelUpload_Result">
+          <ScalarProperty Name="SchoolId" ColumnName="SchoolId" />
+          <ScalarProperty Name="MonthId" ColumnName="MonthId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="YearId" ColumnName="YearId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="cities">
+      <EntityTypeMapping TypeName="outreachpmsModel.city">
+        <MappingFragment StoreEntitySet="city">
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="cityname" ColumnName="cityname" />
+          <ScalarProperty Name="cityid" ColumnName="cityid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="classes">
+      <EntityTypeMapping TypeName="outreachpmsModel.class">
+        <MappingFragment StoreEntitySet="class">
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="classname" ColumnName="classname" />
+          <ScalarProperty Name="classid" ColumnName="classid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="divisions">
+      <EntityTypeMapping TypeName="outreachpmsModel.division">
+        <MappingFragment StoreEntitySet="division">
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="divisionname" ColumnName="divisionname" />
+          <ScalarProperty Name="divisionid" ColumnName="divisionid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="groups">
+      <EntityTypeMapping TypeName="outreachpmsModel.group">
+        <MappingFragment StoreEntitySet="group">
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="groupname" ColumnName="groupname" />
+          <ScalarProperty Name="schoolid" ColumnName="schoolid" />
+          <ScalarProperty Name="groupid" ColumnName="groupid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="months">
+      <EntityTypeMapping TypeName="outreachpmsModel.month">
+        <MappingFragment StoreEntitySet="month">
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="monthname" ColumnName="monthname" />
+          <ScalarProperty Name="monthid" ColumnName="monthid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="parameters">
+      <EntityTypeMapping TypeName="outreachpmsModel.parameter">
+        <MappingFragment StoreEntitySet="parameter">
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="parametername" ColumnName="parametername" />
+          <ScalarProperty Name="parameterid" ColumnName="parameterid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="parameterschoolmaps">
+      <EntityTypeMapping TypeName="outreachpmsModel.parameterschoolmap">
+        <MappingFragment StoreEntitySet="parameterschoolmap">
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="alterparameter" ColumnName="alterparameter" />
+          <ScalarProperty Name="schoolid" ColumnName="schoolid" />
+          <ScalarProperty Name="parameterid" ColumnName="parameterid" />
+          <ScalarProperty Name="parameterschoolmapid" ColumnName="parameterschoolmapid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="performanceyears">
+      <EntityTypeMapping TypeName="outreachpmsModel.performanceyear">
+        <MappingFragment StoreEntitySet="performanceyear">
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="performanceyear1" ColumnName="performanceyear" />
+          <ScalarProperty Name="yearid" ColumnName="yearid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roles">
+      <EntityTypeMapping TypeName="outreachpmsModel.role">
+        <MappingFragment StoreEntitySet="role">
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="rolename" ColumnName="rolename" />
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="schools">
+      <EntityTypeMapping TypeName="outreachpmsModel.school">
+        <MappingFragment StoreEntitySet="school">
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="cityid" ColumnName="cityid" />
+          <ScalarProperty Name="schoolname" ColumnName="schoolname" />
+          <ScalarProperty Name="schoolid" ColumnName="schoolid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="students">
+      <EntityTypeMapping TypeName="outreachpmsModel.student">
+        <MappingFragment StoreEntitySet="student">
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="caste" ColumnName="caste" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="studentname" ColumnName="studentname" />
+          <ScalarProperty Name="studentid" ColumnName="studentid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="studentdailyperformances">
+      <EntityTypeMapping TypeName="outreachpmsModel.studentdailyperformance">
+        <MappingFragment StoreEntitySet="studentdailyperformance">
+          <ScalarProperty Name="Points" ColumnName="Points" />
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="yearid" ColumnName="yearid" />
+          <ScalarProperty Name="monthid" ColumnName="monthid" />
+          <ScalarProperty Name="day" ColumnName="day" />
+          <ScalarProperty Name="HomeWork" ColumnName="HomeWork" />
+          <ScalarProperty Name="Discipline" ColumnName="Discipline" />
+          <ScalarProperty Name="Attendance" ColumnName="Attendance" />
+          <ScalarProperty Name="studentschoolmapid" ColumnName="studentschoolmapid" />
+          <ScalarProperty Name="studentdailyperformanceid" ColumnName="studentdailyperformanceid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="studentschoolmaps">
+      <EntityTypeMapping TypeName="outreachpmsModel.studentschoolmap">
+        <MappingFragment StoreEntitySet="studentschoolmap">
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="groupid" ColumnName="groupid" />
+          <ScalarProperty Name="rollnumber" ColumnName="rollnumber" />
+          <ScalarProperty Name="divisionid" ColumnName="divisionid" />
+          <ScalarProperty Name="classid" ColumnName="classid" />
+          <ScalarProperty Name="schoolid" ColumnName="schoolid" />
+          <ScalarProperty Name="studentid" ColumnName="studentid" />
+          <ScalarProperty Name="studentschoolmapid" ColumnName="studentschoolmapid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="studentteachers">
+      <EntityTypeMapping TypeName="outreachpmsModel.studentteacher">
+        <MappingFragment StoreEntitySet="studentteacher">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="teacherid" ColumnName="teacherid" />
+          <ScalarProperty Name="studentid" ColumnName="studentid" />
+          <ScalarProperty Name="studentteacherid" ColumnName="studentteacherid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="teachers">
+      <EntityTypeMapping TypeName="outreachpmsModel.teacher">
+        <MappingFragment StoreEntitySet="teacher">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="schoolid" ColumnName="schoolid" />
+          <ScalarProperty Name="teachername" ColumnName="teachername" />
+          <ScalarProperty Name="teacherid" ColumnName="teacherid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="outreachpmsModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="cityid" ColumnName="cityid" />
+          <ScalarProperty Name="schoolid" ColumnName="schoolid" />
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="DuplicateCheckForPerformanceBulkUpload" FunctionName="outreachpmsModel.Store.DuplicateCheckForPerformanceBulkUpload" />
+  </EntityContainerMapping>
+</Mapping>

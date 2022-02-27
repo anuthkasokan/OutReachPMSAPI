@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1B69B2CA-DB1D-45CC-B7FE-B4AD20C44BEE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusinessLayer</RootNamespace>
+    <AssemblyName>BusinessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus, Version=4.5.3.1, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.3.1\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessAccess\AuthenticationDetails.cs" />
+    <Compile Include="BusinessAccess\ChartDetails.cs" />
+    <Compile Include="BusinessAccess\CityDetails.cs" />
+    <Compile Include="BusinessAccess\ClassDetails.cs" />
+    <Compile Include="BusinessAccess\ExcelPackageExtensions.cs" />
+    <Compile Include="BusinessAccess\FileManagement.cs" />
+    <Compile Include="BusinessAccess\PerformanceManagement.cs" />
+    <Compile Include="BusinessAccess\SchoolDetails.cs" />
+    <Compile Include="BusinessAccess\StarDetails.cs" />
+    <Compile Include="BusinessAccess\StudentDailyPerformanceDetails.cs" />
+    <Compile Include="BusinessAccess\GroupDetails.cs" />
+    <Compile Include="BusinessAccess\StudentDetails.cs" />
+    <Compile Include="BusinessAccess\UserDetails.cs" />
+    <Compile Include="BusinessAccess\UserRolesDetails.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Common\Response.cs" />
+    <Compile Include="Interface\IAuthenticationDetails.cs" />
+    <Compile Include="Interface\IChartDetails.cs" />
+    <Compile Include="Interface\IFileManagement.cs" />
+    <Compile Include="Interface\IGetDetails.cs" />
+    <Compile Include="Interface\IGetDetailsBy2Id.cs" />
+    <Compile Include="Interface\IGetDetailsById.cs" />
+    <Compile Include="Interface\IMapper.cs" />
+    <Compile Include="Interface\IMapper2.cs" />
+    <Compile Include="Interface\IMapper3.cs" />
+    <Compile Include="Interface\ISchoolDetails.cs" />
+    <Compile Include="Interface\IStarDetails.cs" />
+    <Compile Include="Interface\IPerformanceManagement.cs" />
+    <Compile Include="Interface\IStudentDailyPerformance.cs" />
+    <Compile Include="Interface\IUserRole.cs" />
+    <Compile Include="Mapper\AlterParameterMapper.cs" />
+    <Compile Include="Mapper\AuthenticationMapper.cs" />
+    <Compile Include="Mapper\ChartMapper.cs" />
+    <Compile Include="Mapper\CityMapper.cs" />
+    <Compile Include="Mapper\ClassMapper.cs" />
+    <Compile Include="Mapper\ClassWisePerformanceMapper.cs" />
+    <Compile Include="Mapper\EditMapper.cs" />
+    <Compile Include="Mapper\GroupWisePerformanceMapper.cs" />
+    <Compile Include="Mapper\RoleMapper.cs" />
+    <Compile Include="Mapper\GroupMapper.cs" />
+    <Compile Include="Mapper\SchoolMapper.cs" />
+    <Compile Include="Mapper\SchoolWisePerformanceMapper.cs" />
+    <Compile Include="Mapper\StarFillingMapper.cs" />
+    <Compile Include="Mapper\StudentMapper.cs" />
+    <Compile Include="Mapper\StudentWisePerformanceMapper.cs" />
+    <Compile Include="Mapper\UserMapper.cs" />
+    <Compile Include="Model\AddPerformanceData.cs" />
+    <Compile Include="Model\Group.cs" />
+    <Compile Include="Model\City.cs" />
+    <Compile Include="Model\CityWisePerformance.cs" />
+    <Compile Include="Model\Class.cs" />
+    <Compile Include="Model\ClassWisePerformance.cs" />
+    <Compile Include="Model\GroupWisePerformance.cs" />
+    <Compile Include="Model\Parameter.cs" />
+    <Compile Include="Model\Role.cs" />
+    <Compile Include="Model\School.cs" />
+    <Compile Include="Model\SchoolWisePerformance.cs" />
+    <Compile Include="Model\StarWisePerformance.cs" />
+    <Compile Include="Model\Student.cs" />
+    <Compile Include="Model\StudentSchoolMap.cs" />
+    <Compile Include="Model\StudentWisePerformance.cs" />
+    <Compile Include="Model\UploadPrimaryDetails.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{290694ae-2a14-46d1-8753-250deda2da4a}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

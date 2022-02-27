@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="outreachpmsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="outreachpmsEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="GetDataForExcelUpload" ReturnType="Collection(outreachpmsModel.GetDataForExcelUpload_Result)">
+      <Parameter Name="SchoolName" Mode="In" Type="String" />
+      <Parameter Name="Class" Mode="In" Type="String" />
+      <Parameter Name="Month" Mode="In" Type="String" />
+      <Parameter Name="Year" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="cities" EntityType="outreachpmsModel.city" />
+    <EntitySet Name="classes" EntityType="outreachpmsModel.class" />
+    <EntitySet Name="divisions" EntityType="outreachpmsModel.division" />
+    <EntitySet Name="groups" EntityType="outreachpmsModel.group" />
+    <EntitySet Name="months" EntityType="outreachpmsModel.month" />
+    <EntitySet Name="parameters" EntityType="outreachpmsModel.parameter" />
+    <EntitySet Name="parameterschoolmaps" EntityType="outreachpmsModel.parameterschoolmap" />
+    <EntitySet Name="performanceyears" EntityType="outreachpmsModel.performanceyear" />
+    <EntitySet Name="roles" EntityType="outreachpmsModel.role" />
+    <EntitySet Name="schools" EntityType="outreachpmsModel.school" />
+    <EntitySet Name="students" EntityType="outreachpmsModel.student" />
+    <EntitySet Name="studentdailyperformances" EntityType="outreachpmsModel.studentdailyperformance" />
+    <EntitySet Name="studentschoolmaps" EntityType="outreachpmsModel.studentschoolmap" />
+    <EntitySet Name="studentteachers" EntityType="outreachpmsModel.studentteacher" />
+    <EntitySet Name="teachers" EntityType="outreachpmsModel.teacher" />
+    <EntitySet Name="users" EntityType="outreachpmsModel.user" />
+    <AssociationSet Name="FK__school__cityid__300424B4" Association="outreachpmsModel.FK__school__cityid__300424B4">
+      <End Role="city" EntitySet="cities" />
+      <End Role="school" EntitySet="schools" />
+    </AssociationSet>
+    <AssociationSet Name="FK__user__cityid__398D8EEE" Association="outreachpmsModel.FK__user__cityid__398D8EEE">
+      <End Role="city" EntitySet="cities" />
+      <End Role="user" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__studentsc__class__31EC6D26" Association="outreachpmsModel.FK__studentsc__class__31EC6D26">
+      <End Role="class" EntitySet="classes" />
+      <End Role="studentschoolmap" EntitySet="studentschoolmaps" />
+    </AssociationSet>
+    <AssociationSet Name="FK__studentsc__divis__32E0915F" Association="outreachpmsModel.FK__studentsc__divis__32E0915F">
+      <End Role="division" EntitySet="divisions" />
+      <End Role="studentschoolmap" EntitySet="studentschoolmaps" />
+    </AssociationSet>
+    <AssociationSet Name="FK__group__schoolid__2D27B809" Association="outreachpmsModel.FK__group__schoolid__2D27B809">
+      <End Role="school" EntitySet="schools" />
+      <End Role="group" EntitySet="groups" />
+    </AssociationSet>
+    <AssociationSet Name="FK__studentsc__group__33D4B598" Association="outreachpmsModel.FK__studentsc__group__33D4B598">
+      <End Role="group" EntitySet="groups" />
+      <End Role="studentschoolmap" EntitySet="studentschoolmaps" />
+    </AssociationSet>
+    <AssociationSet Name="FK__parameter__param__2E1BDC42" Association="outreachpmsModel.FK__parameter__param__2E1BDC42">
+      <End Role="parameter" EntitySet="parameters" />
+      <End Role="parameterschoolmap" EntitySet="parameterschoolmaps" />
+    </AssociationSet>
+    <AssociationSet Name="FK__parameter__schoo__2F10007B" Association="outreachpmsModel.FK__parameter__schoo__2F10007B">
+      <End Role="school" EntitySet="schools" />
+      <End Role="parameterschoolmap" EntitySet="parameterschoolmaps" />
+    </AssociationSet>
+    <AssociationSet Name="FK__user__roleid__3A81B327" Association="outreachpmsModel.FK__user__roleid__3A81B327">
+      <End Role="role" EntitySet="roles" />
+      <End Role="user" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__studentsc__schoo__34C8D9D1" Association="outreachpmsModel.FK__studentsc__schoo__34C8D9D1">
+      <End Role="school" EntitySet="schools" />
+      <End Role="studentschoolmap" EntitySet="studentschoolmaps" />
+    </AssociationSet>
+    <AssociationSet Name="FK__teacher__schooli__38996AB5" Association="outreachpmsModel.FK__teacher__schooli__38996AB5">
+      <End Role="school" EntitySet="schools" />
+      <End Role="teacher" EntitySet="teachers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__user__schoolid__3B75D760" Association="outreachpmsModel.FK__user__schoolid__3B75D760">
+      <End Role="school" EntitySet="schools" />
+      <End Role="user" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__studentsc__stude__35BCFE0A" Association="outreachpmsModel.FK__studentsc__stude__35BCFE0A">
+      <End Role="student" EntitySet="students" />
+      <End Role="studentschoolmap" EntitySet="studentschoolmaps" />
+    </AssociationSet>
+    <AssociationSet Name="FK__studentte__stude__36B12243" Association="outreachpmsModel.FK__studentte__stude__36B12243">
+      <End Role="student" EntitySet="students" />
+      <End Role="studentteacher" EntitySet="studentteachers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_studentdailyperformance_studentschoolmap" Association="outreachpmsModel.FK_studentdailyperformance_studentschoolmap">
+      <End Role="studentschoolmap" EntitySet="studentschoolmaps" />
+      <End Role="studentdailyperformance" EntitySet="studentdailyperformances" />
+    </AssociationSet>
+    <AssociationSet Name="FK__studentte__teach__37A5467C" Association="outreachpmsModel.FK__studentte__teach__37A5467C">
+      <End Role="teacher" EntitySet="teachers" />
+      <End Role="studentteacher" EntitySet="studentteachers" />
+    </AssociationSet>
+    <FunctionImport Name="DuplicateCheckForPerformanceBulkUpload" ReturnType="Collection(Int32)">
+      <Parameter Name="SchoolId" Mode="In" Type="Int32" />
+      <Parameter Name="ClassId" Mode="In" Type="Int32" />
+      <Parameter Name="day" Mode="In" Type="Int32" />
+      <Parameter Name="month" Mode="In" Type="Int32" />
+      <Parameter Name="year" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="GetDataForExcelUpload_Result">
+    <Property Type="Int32" Name="SchoolId" Nullable="true" />
+    <Property Type="Int32" Name="MonthId" Nullable="true" />
+    <Property Type="Int32" Name="ClassId" Nullable="true" />
+    <Property Type="Int32" Name="YearId" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="city">
+    <Key>
+      <PropertyRef Name="cityid" />
+    </Key>
+    <Property Name="cityid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cityname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="created_on" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="schools" Relationship="outreachpmsModel.FK__school__cityid__300424B4" FromRole="city" ToRole="school" />
+    <NavigationProperty Name="users" Relationship="outreachpmsModel.FK__user__cityid__398D8EEE" FromRole="city" ToRole="user" />
+  </EntityType>
+  <EntityType Name="class">
+    <Key>
+      <PropertyRef Name="classid" />
+    </Key>
+    <Property Name="classid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="classname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="created_on" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="studentschoolmaps" Relationship="outreachpmsModel.FK__studentsc__class__31EC6D26" FromRole="class" ToRole="studentschoolmap" />
+  </EntityType>
+  <EntityType Name="division">
+    <Key>
+      <PropertyRef Name="divisionid" />
+    </Key>
+    <Property Name="divisionid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="divisionname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="created_on" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="studentschoolmaps" Relationship="outreachpmsModel.FK__studentsc__divis__32E0915F" FromRole="division" ToRole="studentschoolmap" />
+  </EntityType>
+  <EntityType Name="group">
+    <Key>
+      <PropertyRef Name="groupid" />
+    </Key>
+    <Property Name="groupid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="schoolid" Type="Int32" />
+    <Property Name="groupname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="created_on" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="school" Relationship="outreachpmsModel.FK__group__schoolid__2D27B809" FromRole="group" ToRole="school" />
+    <NavigationProperty Name="studentschoolmaps" Relationship="outreachpmsModel.FK__studentsc__group__33D4B598" FromRole="group" ToRole="studentschoolmap" />
+  </EntityType>
+  <EntityType Name="month">
+    <Key>
+      <PropertyRef Name="monthid" />
+    </Key>
+    <Property Name="monthid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="monthname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="created_on" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="parameter">
+    <Key>
+      <PropertyRef Name="parameterid" />
+    </Key>
+    <Property Name="parameterid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="parametername" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="created_on" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="parameterschoolmaps" Relationship="outreachpmsModel.FK__parameter__param__2E1BDC42" FromRole="parameter" ToRole="parameterschoolmap" />
+  </EntityType>
+  <EntityType Name="parameterschoolmap">
+    <Key>
+      <PropertyRef Name="parameterschoolmapid" />
+    </Key>
+    <Property Name="parameterschoolmapid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="parameterid" Type="Int32" />
+    <Property Name="schoolid" Type="Int32" />
+    <Property Name="alterparameter" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="created_on" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="parameter" Relationship="outreachpmsModel.FK__parameter__param__2E1BDC42" FromRole="parameterschoolmap" ToRole="parameter" />
+    <NavigationProperty Name="school" Relationship="outreachpmsModel.FK__parameter__schoo__2F10007B" FromRole="parameterschoolmap" ToRole="school" />
+  </EntityType>
+  <EntityType Name="performanceyear">
+    <Key>
+      <PropertyRef Name="yearid" />
+    </Key>
+    <Property Name="yearid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="performanceyear1" Type="Int32" />
+    <Property Name="created_on" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="role">
+    <Key>
+      <PropertyRef Name="roleid" />
+    </Key>
+    <Property Name="roleid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rolename" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="created_on" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="users" Relationship="outreachpmsModel.FK__user__roleid__3A81B327" FromRole="role" ToRole="user" />
+  </EntityType>
+  <EntityType Name="school">
+    <Key>
+      <PropertyRef Name="schoolid" />
+    </Key>
+    <Property Name="schoolid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="schoolname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cityid" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="created_on" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="city" Relationship="outreachpmsModel.FK__school__cityid__300424B4" FromRole="school" ToRole="city" />
+    <NavigationProperty Name="groups" Relationship="outreachpmsModel.FK__group__schoolid__2D27B809" FromRole="school" ToRole="group" />
+    <NavigationProperty Name="parameterschoolmaps" Relationship="outreachpmsModel.FK__parameter__schoo__2F10007B" FromRole="school" ToRole="parameterschoolmap" />
+    <NavigationProperty Name="studentschoolmaps" Relationship="outreachpmsModel.FK__studentsc__schoo__34C8D9D1" FromRole="school" ToRole="studentschoolmap" />
+    <NavigationProperty Name="teachers" Relationship="outreachpmsModel.FK__teacher__schooli__38996AB5" FromRole="school" ToRole="teacher" />
+    <NavigationProperty Name="users" Relationship="outreachpmsModel.FK__user__schoolid__3B75D760" FromRole="school" ToRole="user" />
+  </EntityType>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="studentid" />
+    </Key>
+    <Property Name="studentid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="studentname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="gender" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="caste" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="created_on" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="studentschoolmaps" Relationship="outreachpmsModel.FK__studentsc__stude__35BCFE0A" FromRole="student" ToRole="studentschoolmap" />
+    <NavigationProperty Name="studentteachers" Relationship="outreachpmsModel.FK__studentte__stude__36B12243" FromRole="student" ToRole="studentteacher" />
+  </EntityType>
+  <EntityType Name="studentdailyperformance">
+    <Key>
+      <PropertyRef Name="studentdailyperformanceid" />
+    </Key>
+    <Property Name="studentdailyperformanceid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="studentschoolmapid" Type="Int32" />
+    <Property Name="Attendance" Type="Int32" />
+    <Property Name="Discipline" Type="Int32" />
+    <Property Name="HomeWork" Type="Int32" />
+    <Property Name="day" Type="Int32" />
+    <Property Name="monthid" Type="Int32" />
+    <Property Name="yearid" Type="Int32" />
+    <Property Name="created_on" Type="DateTime" Precision="3" />
+    <Property Name="Points" Type="Int32" />
+    <NavigationProperty Name="studentschoolmap" Relationship="outreachpmsModel.FK_studentdailyperformance_studentschoolmap" FromRole="studentdailyperformance" ToRole="studentschoolmap" />
+  </EntityType>
+  <EntityType Name="studentschoolmap">
+    <Key>
+      <PropertyRef Name="studentschoolmapid" />
+    </Key>
+    <Property Name="studentschoolmapid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="studentid" Type="Int32" />
+    <Property Name="schoolid" Type="Int32" />
+    <Property Name="classid" Type="Int32" />
+    <Property Name="divisionid" Type="Int32" />
+    <Property Name="rollnumber" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="groupid" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="created_on" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="class" Relationship="outreachpmsModel.FK__studentsc__class__31EC6D26" FromRole="studentschoolmap" ToRole="class" />
+    <NavigationProperty Name="division" Relationship="outreachpmsModel.FK__studentsc__divis__32E0915F" FromRole="studentschoolmap" ToRole="division" />
+    <NavigationProperty Name="group" Relationship="outreachpmsModel.FK__studentsc__group__33D4B598" FromRole="studentschoolmap" ToRole="group" />
+    <NavigationProperty Name="school" Relationship="outreachpmsModel.FK__studentsc__schoo__34C8D9D1" FromRole="studentschoolmap" ToRole="school" />
+    <NavigationProperty Name="student" Relationship="outreachpmsModel.FK__studentsc__stude__35BCFE0A" FromRole="studentschoolmap" ToRole="student" />
+    <NavigationProperty Name="studentdailyperformances" Relationship="outreachpmsModel.FK_studentdailyperformance_studentschoolmap" FromRole="studentschoolmap" ToRole="studentdailyperformance" />
+  </EntityType>
+  <EntityType Name="studentteacher">
+    <Key>
+      <PropertyRef Name="studentteacherid" />
+    </Key>
+    <Property Name="studentteacherid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="studentid" Type="Int32" />
+    <Property Name="teacherid" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+    <NavigationProperty Name="student" Relationship="outreachpmsModel.FK__studentte__stude__36B12243" FromRole="studentteacher" ToRole="student" />
+    <NavigationProperty Name="teacher" Relationship="outreachpmsModel.FK__studentte__teach__37A5467C" FromRole="studentteacher" ToRole="teacher" />
+  </EntityType>
+  <EntityType Name="teacher">
+    <Key>
+      <PropertyRef Name="teacherid" />
+    </Key>
+    <Property Name="teacherid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="teachername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="schoolid" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+    <NavigationProperty Name="school" Relationship="outreachpmsModel.FK__teacher__schooli__38996AB5" FromRole="teacher" ToRole="school" />
+    <NavigationProperty Name="studentteachers" Relationship="outreachpmsModel.FK__studentte__teach__37A5467C" FromRole="teacher" ToRole="studentteacher" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="roleid" Type="Int32" />
+    <Property Name="schoolid" Type="Int32" />
+    <Property Name="cityid" Type="Int32" />
+    <Property Name="created_on" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="city" Relationship="outreachpmsModel.FK__user__cityid__398D8EEE" FromRole="user" ToRole="city" />
+    <NavigationProperty Name="role" Relationship="outreachpmsModel.FK__user__roleid__3A81B327" FromRole="user" ToRole="role" />
+    <NavigationProperty Name="school" Relationship="outreachpmsModel.FK__user__schoolid__3B75D760" FromRole="user" ToRole="school" />
+  </EntityType>
+  <Association Name="FK__school__cityid__300424B4">
+    <End Type="outreachpmsModel.city" Role="city" Multiplicity="0..1" />
+    <End Type="outreachpmsModel.school" Role="school" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="city">
+        <PropertyRef Name="cityid" />
+      </Principal>
+      <Dependent Role="school">
+        <PropertyRef Name="cityid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__user__cityid__398D8EEE">
+    <End Type="outreachpmsModel.city" Role="city" Multiplicity="0..1" />
+    <End Type="outreachpmsModel.user" Role="user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="city">
+        <PropertyRef Name="cityid" />
+      </Principal>
+      <Dependent Role="user">
+        <PropertyRef Name="cityid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__studentsc__class__31EC6D26">
+    <End Type="outreachpmsModel.class" Role="class" Multiplicity="0..1" />
+    <End Type="outreachpmsModel.studentschoolmap" Role="studentschoolmap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="class">
+        <PropertyRef Name="classid" />
+      </Principal>
+      <Dependent Role="studentschoolmap">
+        <PropertyRef Name="classid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__studentsc__divis__32E0915F">
+    <End Type="outreachpmsModel.division" Role="division" Multiplicity="0..1" />
+    <End Type="outreachpmsModel.studentschoolmap" Role="studentschoolmap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="division">
+        <PropertyRef Name="divisionid" />
+      </Principal>
+      <Dependent Role="studentschoolmap">
+        <PropertyRef Name="divisionid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__group__schoolid__2D27B809">
+    <End Type="outreachpmsModel.school" Role="school" Multiplicity="0..1" />
+    <End Type="outreachpmsModel.group" Role="group" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="school">
+        <PropertyRef Name="schoolid" />
+      </Principal>
+      <Dependent Role="group">
+        <PropertyRef Name="schoolid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__studentsc__group__33D4B598">
+    <End Type="outreachpmsModel.group" Role="group" Multiplicity="0..1" />
+    <End Type="outreachpmsModel.studentschoolmap" Role="studentschoolmap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="group">
+        <PropertyRef Name="groupid" />
+      </Principal>
+      <Dependent Role="studentschoolmap">
+        <PropertyRef Name="groupid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__parameter__param__2E1BDC42">
+    <End Type="outreachpmsModel.parameter" Role="parameter" Multiplicity="0..1" />
+    <End Type="outreachpmsModel.parameterschoolmap" Role="parameterschoolmap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="parameter">
+        <PropertyRef Name="parameterid" />
+      </Principal>
+      <Dependent Role="parameterschoolmap">
+        <PropertyRef Name="parameterid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__parameter__schoo__2F10007B">
+    <End Type="outreachpmsModel.school" Role="school" Multiplicity="0..1" />
+    <End Type="outreachpmsModel.parameterschoolmap" Role="parameterschoolmap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="school">
+        <PropertyRef Name="schoolid" />
+      </Principal>
+      <Dependent Role="parameterschoolmap">
+        <PropertyRef Name="schoolid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__user__roleid__3A81B327">
+    <End Type="outreachpmsModel.role" Role="role" Multiplicity="0..1" />
+    <End Type="outreachpmsModel.user" Role="user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="role">
+        <PropertyRef Name="roleid" />
+      </Principal>
+      <Dependent Role="user">
+        <PropertyRef Name="roleid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__studentsc__schoo__34C8D9D1">
+    <End Type="outreachpmsModel.school" Role="school" Multiplicity="0..1" />
+    <End Type="outreachpmsModel.studentschoolmap" Role="studentschoolmap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="school">
+        <PropertyRef Name="schoolid" />
+      </Principal>
+      <Dependent Role="studentschoolmap">
+        <PropertyRef Name="schoolid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__teacher__schooli__38996AB5">
+    <End Type="outreachpmsModel.school" Role="school" Multiplicity="0..1" />
+    <End Type="outreachpmsModel.teacher" Role="teacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="school">
+        <PropertyRef Name="schoolid" />
+      </Principal>
+      <Dependent Role="teacher">
+        <PropertyRef Name="schoolid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__user__schoolid__3B75D760">
+    <End Type="outreachpmsModel.school" Role="school" Multiplicity="0..1" />
+    <End Type="outreachpmsModel.user" Role="user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="school">
+        <PropertyRef Name="schoolid" />
+      </Principal>
+      <Dependent Role="user">
+        <PropertyRef Name="schoolid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__studentsc__stude__35BCFE0A">
+    <End Type="outreachpmsModel.student" Role="student" Multiplicity="0..1" />
+    <End Type="outreachpmsModel.studentschoolmap" Role="studentschoolmap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="studentid" />
+      </Principal>
+      <Dependent Role="studentschoolmap">
+        <PropertyRef Name="studentid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__studentte__stude__36B12243">
+    <End Type="outreachpmsModel.student" Role="student" Multiplicity="0..1" />
+    <End Type="outreachpmsModel.studentteacher" Role="studentteacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="studentid" />
+      </Principal>
+      <Dependent Role="studentteacher">
+        <PropertyRef Name="studentid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_studentdailyperformance_studentschoolmap">
+    <End Type="outreachpmsModel.studentschoolmap" Role="studentschoolmap" Multiplicity="0..1" />
+    <End Type="outreachpmsModel.studentdailyperformance" Role="studentdailyperformance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="studentschoolmap">
+        <PropertyRef Name="studentschoolmapid" />
+      </Principal>
+      <Dependent Role="studentdailyperformance">
+        <PropertyRef Name="studentschoolmapid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__studentte__teach__37A5467C">
+    <End Type="outreachpmsModel.teacher" Role="teacher" Multiplicity="0..1" />
+    <End Type="outreachpmsModel.studentteacher" Role="studentteacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="teacher">
+        <PropertyRef Name="teacherid" />
+      </Principal>
+      <Dependent Role="studentteacher">
+        <PropertyRef Name="teacherid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

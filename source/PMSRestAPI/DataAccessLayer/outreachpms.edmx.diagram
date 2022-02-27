@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5a3c658f861c4110a3686e56522b2681" Name="Diagram1">
+        <EntityTypeShape EntityType="outreachpmsModel.city" Width="1.5" PointX="0.75" PointY="7.5" />
+        <EntityTypeShape EntityType="outreachpmsModel.class" Width="1.5" PointX="8.25" PointY="12.875" />
+        <EntityTypeShape EntityType="outreachpmsModel.division" Width="1.5" PointX="8.25" PointY="15.375" />
+        <EntityTypeShape EntityType="outreachpmsModel.group" Width="1.5" PointX="5.25" PointY="12.75" />
+        <EntityTypeShape EntityType="outreachpmsModel.month" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="outreachpmsModel.parameter" Width="1.5" PointX="6" PointY="1.625" />
+        <EntityTypeShape EntityType="outreachpmsModel.parameterschoolmap" Width="1.5" PointX="8.25" PointY="6.25" />
+        <EntityTypeShape EntityType="outreachpmsModel.performanceyear" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="outreachpmsModel.role" Width="1.5" PointX="3" PointY="3.625" />
+        <EntityTypeShape EntityType="outreachpmsModel.school" Width="1.5" PointX="3" PointY="7" />
+        <EntityTypeShape EntityType="outreachpmsModel.student" Width="1.5" PointX="5.25" PointY="16.625" />
+        <EntityTypeShape EntityType="outreachpmsModel.studentdailyperformance" Width="1.5" PointX="12.75" PointY="9.5" />
+        <EntityTypeShape EntityType="outreachpmsModel.studentschoolmap" Width="1.5" PointX="10.5" PointY="9.125" />
+        <EntityTypeShape EntityType="outreachpmsModel.studentteacher" Width="1.5" PointX="7.5" PointY="9.75" />
+        <EntityTypeShape EntityType="outreachpmsModel.teacher" Width="1.5" PointX="5.25" PointY="9.75" />
+        <EntityTypeShape EntityType="outreachpmsModel.user" Width="1.5" PointX="5.25" PointY="5" />
+        <AssociationConnector Association="outreachpmsModel.FK__school__cityid__300424B4" />
+        <AssociationConnector Association="outreachpmsModel.FK__user__cityid__398D8EEE" />
+        <AssociationConnector Association="outreachpmsModel.FK__studentsc__class__31EC6D26" />
+        <AssociationConnector Association="outreachpmsModel.FK__studentsc__divis__32E0915F" />
+        <AssociationConnector Association="outreachpmsModel.FK__group__schoolid__2D27B809" />
+        <AssociationConnector Association="outreachpmsModel.FK__studentsc__group__33D4B598" />
+        <AssociationConnector Association="outreachpmsModel.FK__parameter__param__2E1BDC42" />
+        <AssociationConnector Association="outreachpmsModel.FK__parameter__schoo__2F10007B" />
+        <AssociationConnector Association="outreachpmsModel.FK__user__roleid__3A81B327" />
+        <AssociationConnector Association="outreachpmsModel.FK__studentsc__schoo__34C8D9D1" />
+        <AssociationConnector Association="outreachpmsModel.FK__teacher__schooli__38996AB5" />
+        <AssociationConnector Association="outreachpmsModel.FK__user__schoolid__3B75D760" />
+        <AssociationConnector Association="outreachpmsModel.FK__studentsc__stude__35BCFE0A" />
+        <AssociationConnector Association="outreachpmsModel.FK__studentte__stude__36B12243" />
+        <AssociationConnector Association="outreachpmsModel.FK_studentdailyperformance_studentschoolmap" />
+        <AssociationConnector Association="outreachpmsModel.FK__studentte__teach__37A5467C" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

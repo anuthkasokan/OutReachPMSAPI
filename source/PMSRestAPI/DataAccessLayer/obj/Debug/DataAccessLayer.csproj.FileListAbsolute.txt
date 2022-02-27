@@ -1,0 +1,12 @@
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer\obj\Debug\DataAccessLayer.csprojAssemblyReference.cache
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

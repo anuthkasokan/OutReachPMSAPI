@@ -1,0 +1,14 @@
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer.Tests\bin\Debug\DataAccessLayer.Tests.dll
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer.Tests\bin\Debug\DataAccessLayer.Tests.pdb
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer.Tests\obj\Debug\DataAccessLayer.Tests.csprojAssemblyReference.cache
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer.Tests\obj\Debug\DataAccessLayer.Tests.csproj.CoreCompileInputs.cache
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer.Tests\obj\Debug\DataAccessLayer.Tests.csproj.CopyComplete
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer.Tests\obj\Debug\DataAccessLayer.Tests.dll
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer.Tests\obj\Debug\DataAccessLayer.Tests.pdb
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\GitLab\745709-Hackathon-RestAPI\source\PMSRestAPI\DataAccessLayer.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml

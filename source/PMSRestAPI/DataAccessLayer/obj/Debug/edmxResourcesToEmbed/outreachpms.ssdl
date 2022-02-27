@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="outreachpmsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="city">
+    <Key>
+      <PropertyRef Name="cityid" />
+    </Key>
+    <Property Name="cityid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cityname" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="bit" />
+    <Property Name="created_on" Type="datetime" />
+  </EntityType>
+  <EntityType Name="class">
+    <Key>
+      <PropertyRef Name="classid" />
+    </Key>
+    <Property Name="classid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="classname" Type="varchar" MaxLength="255" />
+    <Property Name="created_on" Type="datetime" />
+  </EntityType>
+  <EntityType Name="division">
+    <Key>
+      <PropertyRef Name="divisionid" />
+    </Key>
+    <Property Name="divisionid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="divisionname" Type="varchar" MaxLength="255" />
+    <Property Name="created_on" Type="datetime" />
+  </EntityType>
+  <EntityType Name="group">
+    <Key>
+      <PropertyRef Name="groupid" />
+    </Key>
+    <Property Name="groupid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="schoolid" Type="int" />
+    <Property Name="groupname" Type="varchar" MaxLength="255" />
+    <Property Name="status" Type="bit" />
+    <Property Name="created_on" Type="datetime" />
+  </EntityType>
+  <EntityType Name="month">
+    <Key>
+      <PropertyRef Name="monthid" />
+    </Key>
+    <Property Name="monthid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="monthname" Type="varchar" MaxLength="255" />
+    <Property Name="created_on" Type="datetime" />
+  </EntityType>
+  <EntityType Name="parameter">
+    <Key>
+      <PropertyRef Name="parameterid" />
+    </Key>
+    <Property Name="parameterid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="parametername" Type="varchar" MaxLength="255" />
+    <Property Name="created_on" Type="datetime" />
+  </EntityType>
+  <EntityType Name="parameterschoolmap">
+    <Key>
+      <PropertyRef Name="parameterschoolmapid" />
+    </Key>
+    <Property Name="parameterschoolmapid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="parameterid" Type="int" />
+    <Property Name="schoolid" Type="int" />
+    <Property Name="alterparameter" Type="varchar" MaxLength="255" />
+    <Property Name="status" Type="bit" />
+    <Property Name="created_on" Type="datetime" />
+  </EntityType>
+  <EntityType Name="performanceyear">
+    <Key>
+      <PropertyRef Name="yearid" />
+    </Key>
+    <Property Name="yearid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="performanceyear" Type="int" />
+    <Property Name="created_on" Type="datetime" />
+  </EntityType>
+  <EntityType Name="role">
+    <Key>
+      <PropertyRef Name="roleid" />
+    </Key>
+    <Property Name="roleid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rolename" Type="varchar" MaxLength="255" />
+    <Property Name="created_on" Type="datetime" />
+  </EntityType>
+  <EntityType Name="school">
+    <Key>
+      <PropertyRef Name="schoolid" />
+    </Key>
+    <Property Name="schoolid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="schoolname" Type="nvarchar" MaxLength="50" />
+    <Property Name="cityid" Type="int" />
+    <Property Name="status" Type="bit" />
+    <Property Name="created_on" Type="datetime" />
+  </EntityType>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="studentid" />
+    </Key>
+    <Property Name="studentid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="studentname" Type="varchar" MaxLength="255" />
+    <Property Name="gender" Type="varchar" MaxLength="255" />
+    <Property Name="caste" Type="varchar" MaxLength="255" />
+    <Property Name="status" Type="bit" />
+    <Property Name="created_on" Type="datetime" />
+  </EntityType>
+  <EntityType Name="studentdailyperformance">
+    <Key>
+      <PropertyRef Name="studentdailyperformanceid" />
+    </Key>
+    <Property Name="studentdailyperformanceid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="studentschoolmapid" Type="int" />
+    <Property Name="Attendance" Type="int" />
+    <Property Name="Discipline" Type="int" />
+    <Property Name="HomeWork" Type="int" />
+    <Property Name="day" Type="int" />
+    <Property Name="monthid" Type="int" />
+    <Property Name="yearid" Type="int" />
+    <Property Name="created_on" Type="datetime" />
+    <Property Name="Points" Type="int" />
+  </EntityType>
+  <EntityType Name="studentschoolmap">
+    <Key>
+      <PropertyRef Name="studentschoolmapid" />
+    </Key>
+    <Property Name="studentschoolmapid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="studentid" Type="int" />
+    <Property Name="schoolid" Type="int" />
+    <Property Name="classid" Type="int" />
+    <Property Name="divisionid" Type="int" />
+    <Property Name="rollnumber" Type="varchar" MaxLength="255" />
+    <Property Name="groupid" Type="int" />
+    <Property Name="status" Type="bit" />
+    <Property Name="created_on" Type="datetime" />
+  </EntityType>
+  <EntityType Name="studentteacher">
+    <Key>
+      <PropertyRef Name="studentteacherid" />
+    </Key>
+    <Property Name="studentteacherid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="studentid" Type="int" />
+    <Property Name="teacherid" Type="int" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="teacher">
+    <Key>
+      <PropertyRef Name="teacherid" />
+    </Key>
+    <Property Name="teacherid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="teachername" Type="varchar" MaxLength="50" />
+    <Property Name="schoolid" Type="int" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="255" />
+    <Property Name="email" Type="varchar" MaxLength="255" />
+    <Property Name="password" Type="varchar" MaxLength="255" />
+    <Property Name="roleid" Type="int" />
+    <Property Name="schoolid" Type="int" />
+    <Property Name="cityid" Type="int" />
+    <Property Name="created_on" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__group__schoolid__2D27B809">
+    <End Role="school" Type="Self.school" Multiplicity="0..1" />
+    <End Role="group" Type="Self.group" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="school">
+        <PropertyRef Name="schoolid" />
+      </Principal>
+      <Dependent Role="group">
+        <PropertyRef Name="schoolid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__parameter__param__2E1BDC42">
+    <End Role="parameter" Type="Self.parameter" Multiplicity="0..1" />
+    <End Role="parameterschoolmap" Type="Self.parameterschoolmap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="parameter">
+        <PropertyRef Name="parameterid" />
+      </Principal>
+      <Dependent Role="parameterschoolmap">
+        <PropertyRef Name="parameterid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__parameter__schoo__2F10007B">
+    <End Role="school" Type="Self.school" Multiplicity="0..1" />
+    <End Role="parameterschoolmap" Type="Self.parameterschoolmap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="school">
+        <PropertyRef Name="schoolid" />
+      </Principal>
+      <Dependent Role="parameterschoolmap">
+        <PropertyRef Name="schoolid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__school__cityid__300424B4">
+    <End Role="city" Type="Self.city" Multiplicity="0..1" />
+    <End Role="school" Type="Self.school" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="city">
+        <PropertyRef Name="cityid" />
+      </Principal>
+      <Dependent Role="school">
+        <PropertyRef Name="cityid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__studentsc__class__31EC6D26">
+    <End Role="class" Type="Self.class" Multiplicity="0..1" />
+    <End Role="studentschoolmap" Type="Self.studentschoolmap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="class">
+        <PropertyRef Name="classid" />
+      </Principal>
+      <Dependent Role="studentschoolmap">
+        <PropertyRef Name="classid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__studentsc__divis__32E0915F">
+    <End Role="division" Type="Self.division" Multiplicity="0..1" />
+    <End Role="studentschoolmap" Type="Self.studentschoolmap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="division">
+        <PropertyRef Name="divisionid" />
+      </Principal>
+      <Dependent Role="studentschoolmap">
+        <PropertyRef Name="divisionid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__studentsc__group__33D4B598">
+    <End Role="group" Type="Self.group" Multiplicity="0..1" />
+    <End Role="studentschoolmap" Type="Self.studentschoolmap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="group">
+        <PropertyRef Name="groupid" />
+      </Principal>
+      <Dependent Role="studentschoolmap">
+        <PropertyRef Name="groupid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__studentsc__schoo__34C8D9D1">
+    <End Role="school" Type="Self.school" Multiplicity="0..1" />
+    <End Role="studentschoolmap" Type="Self.studentschoolmap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="school">
+        <PropertyRef Name="schoolid" />
+      </Principal>
+      <Dependent Role="studentschoolmap">
+        <PropertyRef Name="schoolid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__studentsc__stude__35BCFE0A">
+    <End Role="student" Type="Self.student" Multiplicity="0..1" />
+    <End Role="studentschoolmap" Type="Self.studentschoolmap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="studentid" />
+      </Principal>
+      <Dependent Role="studentschoolmap">
+        <PropertyRef Name="studentid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__studentte__stude__36B12243">
+    <End Role="student" Type="Self.student" Multiplicity="0..1" />
+    <End Role="studentteacher" Type="Self.studentteacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="studentid" />
+      </Principal>
+      <Dependent Role="studentteacher">
+        <PropertyRef Name="studentid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__studentte__teach__37A5467C">
+    <End Role="teacher" Type="Self.teacher" Multiplicity="0..1" />
+    <End Role="studentteacher" Type="Self.studentteacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="teacher">
+        <PropertyRef Name="teacherid" />
+      </Principal>
+      <Dependent Role="studentteacher">
+        <PropertyRef Name="teacherid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__teacher__schooli__38996AB5">
+    <End Role="school" Type="Self.school" Multiplicity="0..1" />
+    <End Role="teacher" Type="Self.teacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="school">
+        <PropertyRef Name="schoolid" />
+      </Principal>
+      <Dependent Role="teacher">
+        <PropertyRef Name="schoolid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__user__cityid__398D8EEE">
+    <End Role="city" Type="Self.city" Multiplicity="0..1" />
+    <End Role="user" Type="Self.user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="city">
+        <PropertyRef Name="cityid" />
+      </Principal>
+      <Dependent Role="user">
+        <PropertyRef Name="cityid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__user__roleid__3A81B327">
+    <End Role="role" Type="Self.role" Multiplicity="0..1" />
+    <End Role="user" Type="Self.user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="role">
+        <PropertyRef Name="roleid" />
+      </Principal>
+      <Dependent Role="user">
+        <PropertyRef Name="roleid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__user__schoolid__3B75D760">
+    <End Role="school" Type="Self.school" Multiplicity="0..1" />
+    <End Role="user" Type="Self.user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="school">
+        <PropertyRef Name="schoolid" />
+      </Principal>
+      <Dependent Role="user">
+        <PropertyRef Name="schoolid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_studentdailyperformance_studentschoolmap">
+    <End Role="studentschoolmap" Type="Self.studentschoolmap" Multiplicity="0..1" />
+    <End Role="studentdailyperformance" Type="Self.studentdailyperformance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="studentschoolmap">
+        <PropertyRef Name="studentschoolmapid" />
+      </Principal>
+      <Dependent Role="studentdailyperformance">
+        <PropertyRef Name="studentschoolmapid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="DuplicateCheckForPerformanceBulkUpload" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SchoolId" Type="int" Mode="In" />
+    <Parameter Name="ClassId" Type="int" Mode="In" />
+    <Parameter Name="day" Type="int" Mode="In" />
+    <Parameter Name="month" Type="int" Mode="In" />
+    <Parameter Name="year" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetDataForExcelUpload" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SchoolName" Type="varchar" Mode="In" />
+    <Parameter Name="Class" Type="varchar" Mode="In" />
+    <Parameter Name="Month" Type="varchar" Mode="In" />
+    <Parameter Name="Year" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="outreachpmsModelStoreContainer">
+    <EntitySet Name="city" EntityType="Self.city" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="class" EntityType="Self.class" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="division" EntityType="Self.division" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="group" EntityType="Self.group" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="month" EntityType="Self.month" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="parameter" EntityType="Self.parameter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="parameterschoolmap" EntityType="Self.parameterschoolmap" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="performanceyear" EntityType="Self.performanceyear" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="role" EntityType="Self.role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="school" EntityType="Self.school" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="studentdailyperformance" EntityType="Self.studentdailyperformance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="studentschoolmap" EntityType="Self.studentschoolmap" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="studentteacher" EntityType="Self.studentteacher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="teacher" EntityType="Self.teacher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__group__schoolid__2D27B809" Association="Self.FK__group__schoolid__2D27B809">
+      <End Role="school" EntitySet="school" />
+      <End Role="group" EntitySet="group" />
+    </AssociationSet>
+    <AssociationSet Name="FK__parameter__param__2E1BDC42" Association="Self.FK__parameter__param__2E1BDC42">
+      <End Role="parameter" EntitySet="parameter" />
+      <End Role="parameterschoolmap" EntitySet="parameterschoolmap" />
+    </AssociationSet>
+    <AssociationSet Name="FK__parameter__schoo__2F10007B" Association="Self.FK__parameter__schoo__2F10007B">
+      <End Role="school" EntitySet="school" />
+      <End Role="parameterschoolmap" EntitySet="parameterschoolmap" />
+    </AssociationSet>
+    <AssociationSet Name="FK__school__cityid__300424B4" Association="Self.FK__school__cityid__300424B4">
+      <End Role="city" EntitySet="city" />
+      <End Role="school" EntitySet="school" />
+    </AssociationSet>
+    <AssociationSet Name="FK__studentsc__class__31EC6D26" Association="Self.FK__studentsc__class__31EC6D26">
+      <End Role="class" EntitySet="class" />
+      <End Role="studentschoolmap" EntitySet="studentschoolmap" />
+    </AssociationSet>
+    <AssociationSet Name="FK__studentsc__divis__32E0915F" Association="Self.FK__studentsc__divis__32E0915F">
+      <End Role="division" EntitySet="division" />
+      <End Role="studentschoolmap" EntitySet="studentschoolmap" />
+    </AssociationSet>
+    <AssociationSet Name="FK__studentsc__group__33D4B598" Association="Self.FK__studentsc__group__33D4B598">
+      <End Role="group" EntitySet="group" />
+      <End Role="studentschoolmap" EntitySet="studentschoolmap" />
+    </AssociationSet>
+    <AssociationSet Name="FK__studentsc__schoo__34C8D9D1" Association="Self.FK__studentsc__schoo__34C8D9D1">
+      <End Role="school" EntitySet="school" />
+      <End Role="studentschoolmap" EntitySet="studentschoolmap" />
+    </AssociationSet>
+    <AssociationSet Name="FK__studentsc__stude__35BCFE0A" Association="Self.FK__studentsc__stude__35BCFE0A">
+      <End Role="student" EntitySet="student" />
+      <End Role="studentschoolmap" EntitySet="studentschoolmap" />
+    </AssociationSet>
+    <AssociationSet Name="FK__studentte__stude__36B12243" Association="Self.FK__studentte__stude__36B12243">
+      <End Role="student" EntitySet="student" />
+      <End Role="studentteacher" EntitySet="studentteacher" />
+    </AssociationSet>
+    <AssociationSet Name="FK__studentte__teach__37A5467C" Association="Self.FK__studentte__teach__37A5467C">
+      <End Role="teacher" EntitySet="teacher" />
+      <End Role="studentteacher" EntitySet="studentteacher" />
+    </AssociationSet>
+    <AssociationSet Name="FK__teacher__schooli__38996AB5" Association="Self.FK__teacher__schooli__38996AB5">
+      <End Role="school" EntitySet="school" />
+      <End Role="teacher" EntitySet="teacher" />
+    </AssociationSet>
+    <AssociationSet Name="FK__user__cityid__398D8EEE" Association="Self.FK__user__cityid__398D8EEE">
+      <End Role="city" EntitySet="city" />
+      <End Role="user" EntitySet="user" />
+    </AssociationSet>
+    <AssociationSet Name="FK__user__roleid__3A81B327" Association="Self.FK__user__roleid__3A81B327">
+      <End Role="role" EntitySet="role" />
+      <End Role="user" EntitySet="user" />
+    </AssociationSet>
+    <AssociationSet Name="FK__user__schoolid__3B75D760" Association="Self.FK__user__schoolid__3B75D760">
+      <End Role="school" EntitySet="school" />
+      <End Role="user" EntitySet="user" />
+    </AssociationSet>
+    <AssociationSet Name="FK_studentdailyperformance_studentschoolmap" Association="Self.FK_studentdailyperformance_studentschoolmap">
+      <End Role="studentschoolmap" EntitySet="studentschoolmap" />
+      <End Role="studentdailyperformance" EntitySet="studentdailyperformance" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
